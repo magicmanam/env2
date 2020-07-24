@@ -1,0 +1,18 @@
+﻿@{ this.SetTitle("Don't worry"); }
+
+<div>
+    <hgroup class="title">
+        <h1>Don't worry!</h1>
+    </hgroup>
+    <h3>Please contact <a href="@WebConfigurationManager.AppSettings["hot-line"]">@WebConfigurationManager.AppSettings["hot-contact"]</a> to resolve this issue.</h3>
+    <!-- Responsibility of the croud equals to the most reckless person. This is why only personal contact must be here, not a group. -->
+    <br />
+    <h3>Possible reasons:</h3>
+    <ul>
+        <li>Small bug is found. Please inform contact person about your issue</li>
+    </ul>
+    <h3>As you have some free time now, please try great <a href="https://github.com/magicmanam/buferman/blob/master/README.md#buferman" target="_blank">clipboard buffer tool</a> for Windows. It is really hot!</h3>
+</div>
+
+@using System.Web.Configuration
+@using env2.Web.WebPages
