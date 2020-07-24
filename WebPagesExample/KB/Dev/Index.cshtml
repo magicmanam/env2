@@ -1,0 +1,38 @@
+﻿@{ this.SetTitle("Dev Tips"); }
+
+<div>
+    <hgroup class="title">
+        <h1>Dev tips to keep in mind</h1>
+    </hgroup>
+
+    @RenderPage("_Sql.cshtml")
+
+    <br />
+
+    @RenderPage("_Web.cshtml")
+
+    <br />
+    
+    @RenderPage("_JS.cshtml")
+</div>
+
+@section Scripts {
+    <script>// Update on ProJS analog
+        $(function () {
+
+        });
+    </script>
+}
+
+@section Styles
+{
+    <style>
+        .env2-dev-tip {
+            border-bottom: 1px solid grey;
+            padding-bottom: 10px;
+            margin-bottom: 23px;
+        }
+    </style>
+}
+
+@using env2.Web.WebPages

@@ -1,0 +1,13 @@
+﻿<hgroup class="title">
+    <h2>Sql Server</h2>
+</hgroup>
+
+<div class="env2-dev-tip">
+    @@Tables always assume a single row for cardinality. So when large number of rows are in @@tables, the optimizer will choose the wrong access method (nested loop which is good for small # of rows) and lock you into poor performance.
+    <br />
+    Use #tables for anything that might get over 100 rows.
+</div>
+
+<div class="env2-dev-tip">
+    Placeholder for tip
+</div>
