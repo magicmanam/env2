@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+
+    var envName = Request.GetEnvironmentAlias();
+
+    if (!envName.IsEmpty())
+    {
+        Response.Cookies.Add(HttpOnlyCookie.Create(env2.Core.Environment.Marker, envName));
+        Page.Env = new env2.Core.Environment(envName);
+    }
+}
+
+@using env2.Core.Web

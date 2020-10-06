@@ -50,6 +50,8 @@
     <Compile Include="Environment.cs" />
     <Compile Include="EnvironmentExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\HttpOnlyCookie.cs" />
+    <Compile Include="Web\HttpRequestBaseExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

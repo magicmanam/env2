@@ -7,6 +7,8 @@ namespace env2.Core
     /// </summary>
     public class Environment
     {
+        public const string Marker = "env";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Environment"/> class.
         /// </summary>
