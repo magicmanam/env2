@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace env2.Web
+namespace env2.Core.Web
 {
     public class Env2HtmlHelper
     {
