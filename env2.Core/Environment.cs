@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using env2.Core.Web;
+using System.Collections.Generic;
 
 namespace env2.Core
 {
@@ -13,9 +14,10 @@ namespace env2.Core
         /// Initializes a new instance of the <see cref="Environment"/> class.
         /// </summary>
         /// <param name="alias">Environment's alias.</param>
-        public Environment(string alias)
+        public Environment(string alias, IEnumerable<EnvModule> modules)
         {
             this.Alias = alias;
+            this.Modules = modules;       
         }
 
         /// <summary>
@@ -27,6 +29,16 @@ namespace env2.Core
         /// Gets full environment name.
         /// </summary>
         public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets or sets css class associated with the environment.
+        /// </summary>
+        public string CssClass { get; set; }
+
+        /// <summary>
+        /// Gets modules available for the environment.
+        /// </summary>
+        public IEnumerable<EnvModule> Modules { get; private set; }
 
         #region Part of other modules
 

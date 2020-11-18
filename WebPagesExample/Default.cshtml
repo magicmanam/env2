@@ -1,26 +1,17 @@
 ﻿@{
     this.SetTitle(WebConfigurationManager.AppSettings["project-name"]);
+    this.Page.IsHomePage = true; // TO Refactor
 }
 
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@Page.Title.</h1>
-                <h2>Modify this template to jump-start your ASP.NET Web Pages application.</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET Web Pages, visit
-                <a href="https://asp.net/webpages" title="ASP.NET Web Pages Website">https://asp.net/webpages</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET Web Pages.
-                If you have any questions about ASP.NET Web Pages, visit
-                <a href="https://forums.iis.net/1166.aspx" title="ASP.NET Web Pages Forum">our forums</a>.
-            </p>
-        </div>
-    </section>
-}
 
-<h3>We suggest the following:</h3>
+<h3>Modify this template to jump-start your Env2 Web portal.</h3>
+<p>
+    To learn more about Env2 portal, visit
+    <a href="https://github.com/magicmanam/env2" title="Env2 portal description">https://github.com/magicmanam/env2</a>.
+    The page features <mark>modules, source code, and samples</mark> to help you get the most from Env2 portal idea.
+    If you have any questions about Env2 portal, visit
+    <a href="https://github.com/magicmanam/env2/wiki" title="Env2 Wiki">our Wiki</a>.
+</p>
 
 <ol class="round">
     <li class="one">

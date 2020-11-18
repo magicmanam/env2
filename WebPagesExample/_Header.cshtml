@@ -1,0 +1,86 @@
+﻿@{
+    var env = this.GetEnvironment();
+}
+
+<div class="env2-content-wrapper">
+    @*<section id="login">
+        @if (WebSecurity.IsAuthenticated)
+        {
+            <text>
+                Hello, <a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>!
+                <form id="logoutForm" action="~/Account/Logout" method="post">
+                    @AntiForgery.GetHtml()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+                </form>
+            </text>
+        }
+        else
+        {
+            <ul>
+                <li><a href="~/Account/Register">Register</a></li>
+                <li><a href="~/Account/Login">Log in</a></li>
+            </ul>
+        }
+    </section>*@
+    <div class="float-left" title="Select environment to feel your environments power">
+        <p class="site-title">
+            @if (this.Page.IsHomePage == null)
+            {
+                <a href="~/">@this.Env2Html().Env2Label</a>
+            }
+            else
+            {
+                <span>@this.Env2Html().Env2Label</span>
+            }
+        </p>
+    </div>
+    <div class="float-right">
+        <nav>
+            <ul class="menu">
+                @if (env != null)
+                {
+                    <li class="active">Current: <a href="@env.Link("/Env/Health")" title="Open Health page" class="@env.CssClass">@env.Name</a></li>
+                    <li>|</li>
+                }
+                else
+                {
+                    <li class="active">Select a group:</li>
+                }
+                <li class="env2-toggleable-content @(env != null && env.GetMenuGroup() == 1 ? "active" : "")" data-show-id="show-first-menu" data-hide-id="show-second-menu">
+                    <span class="@env?.CssClass" style="font-weight: bolder;">@env?.GetMenuGroupName()</span>
+                </li>
+                <li>
+                    <a class="@env?.CssClass" href="javascript:void(0)" id="show-first-menu">@env?.GetMenuGroupName()</a>
+                </li>
+                <li class="env2-toggleable-content @(env != null && env.GetMenuGroup() == 2 ? "active" : "")" data-show-id="show-second-menu" data-hide-id="show-first-menu">
+                    <span class="@env?.CssClass" style="font-weight: bolder;">@env?.GetMenuGroupName()</span>
+                </li>
+                <li>
+                    <a class="@env?.CssClass" href="javascript:void(0)" id="show-second-menu">@env?.GetMenuGroupName()</a>
+                </li>
+            </ul>
+            <ul class="menu env2-toggleable-content" data-show-id="show-first-menu" data-hide-id="show-second-menu">
+                @RenderPage("~/_FirstMenu.cshtml")
+            </ul>
+            <ul class="menu env2-toggleable-content" data-show-id="show-second-menu" data-hide-id="show-first-menu">
+                @RenderPage("~/_SecondMenu.cshtml")
+            </ul>
+            @if (env != null)
+            {
+                <ul class="menu">
+                    @if (env.GetMenuGroup() == 1)
+                    {
+                        // Just sample
+                    }
+                    @foreach (var module in env.Modules)
+                    {
+                        <li><a class="data @(module.IsActive ? "active" : string.Empty)" href="@env.Link(module.LandingPage)" title="@module.Tip">@module.Name</a></li>
+                    }
+                </ul>
+            }
+        </nav>
+    </div>
+</div>
+
+@using env2.Web.WebPages
+@using env2.Core.Web
