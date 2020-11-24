@@ -2,6 +2,15 @@
     pro.tree.document();
 });
 
+window.onscroll = function scrollFunction() {
+    pro.id('2-top').style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? 'block' : 'none';
+};
+
+function topFunction() {
+    document.body.scrollTop = 0; // Safari
+    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+}
+
 env2 = {};
 
 function makeToggleableContent(contentId, showLinkId, hideLinkId) {
