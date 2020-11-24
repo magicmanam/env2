@@ -1,5 +1,7 @@
 ﻿$(function () {
     pro.tree.document();
+
+    new ClipboardJS('a.copy-link');
 });
 
 window.onscroll = function scrollFunction() {
