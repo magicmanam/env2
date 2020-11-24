@@ -1,10 +1,8 @@
 ﻿$(function () {
-
+    pro.tree.document();
 });
 
-window.onload = function (e) {
-    
-};
+env2 = {};
 
 function makeToggleableContent(contentId, showLinkId, hideLinkId) {
     $('#' + showLinkId).click(function () {
