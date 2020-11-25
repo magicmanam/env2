@@ -35,6 +35,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-noty/2.2.2/packaged/jquery.noty.packaged.min.js"></script>
     <script src="https://magicmanam.github.io/pro-js/0.3/pro.all.js"></script>
     <script src="~/Scripts/env2/app.js"></script>
+    <script src="~/Scripts/env2/common/modules/tips/_.js"></script>
+    <script>
+        $(function () {
+            env2.alias = '@(this.GetEnvironment()?.Alias)';
+        });
+    </script>
 
     @RenderSection("Scripts", required: false)
 </body>
