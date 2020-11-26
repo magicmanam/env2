@@ -1,35 +1,28 @@
 ﻿@{
-    Layout = "~/_SiteLayout.cshtml";
-    Page.Title = "About";
+    this.SetTitle("About");
 }
 
 <hgroup class="title">
-    <h1>@Page.Title.</h1>
-    <h2>Your app description page.</h2>
+    <h2>About the portal</h2>
 </hgroup>
 
 <article>
+    <p>Thank you for your interest to the Env2-portal!</p>
     <p>
-        Use this area to provide additional information.
+        It provides WEB interface for countless set of SQL-scripts which will never be implemented in your product.
+        All of these scripts are really useful for effective product development.
     </p>
-
     <p>
-        Use this area to provide additional information.
+        To learn more about Env2 portal, visit
+        <a href="https://github.com/magicmanam/env2" title="Env2 portal description">https://github.com/magicmanam/env2</a>.
+        The page features <mark>modules, source code, and samples</mark> to help you get the most from Env2 portal idea.
+        If you have any questions about Env2 portal, visit our
+        <a href="https://github.com/magicmanam/env2/wiki" title="Env2 Wiki">Wiki</a>.
     </p>
-
-    <p>
-        Use this area to provide additional information.
-    </p>
+    <p>Enjoy your environments and have a nice working day!</p>
 </article>
 
 <aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li><a href="~/">Home</a></li>
-        <li><a href="~/About">About</a></li>
-        <li><a href="~/Contact">Contact</a></li>
-    </ul>
 </aside>
+
+@using env2.Web.WebPages

@@ -1,6 +1,10 @@
 ﻿$(function () {
     pro.tree.document();
 
+    $('input[type="Submit"]').button();
+    $('input[type="button"]').button();
+    $(document).tooltip();
+
     new ClipboardJS('a.copy-link');
 });
 

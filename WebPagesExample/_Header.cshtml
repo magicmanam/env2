@@ -44,19 +44,19 @@
                 }
                 else
                 {
-                    <li class="active">Select a group:</li>
+                    <li class="active">Select:</li>
                 }
                 <li class="env2-toggleable-content @(env != null && env.GetMenuGroup() == 1 ? "active" : "")" data-show-id="show-first-menu" data-hide-id="show-second-menu">
-                    <span class="@env?.CssClass" style="font-weight: bolder;">@env?.GetMenuGroupName()</span>
+                    <span class="@env?.CssClass" style="font-weight: bolder;">Menu Group 1</span>
                 </li>
                 <li>
-                    <a class="@env?.CssClass" href="javascript:void(0)" id="show-first-menu">@env?.GetMenuGroupName()</a>
+                    <a class="@env?.CssClass" href="javascript:void(0)" id="show-first-menu">Menu Group 1</a>
                 </li>
                 <li class="env2-toggleable-content @(env != null && env.GetMenuGroup() == 2 ? "active" : "")" data-show-id="show-second-menu" data-hide-id="show-first-menu">
-                    <span class="@env?.CssClass" style="font-weight: bolder;">@env?.GetMenuGroupName()</span>
+                    <span class="@env?.CssClass" style="font-weight: bolder;">Menu Group 2</span>
                 </li>
                 <li>
-                    <a class="@env?.CssClass" href="javascript:void(0)" id="show-second-menu">@env?.GetMenuGroupName()</a>
+                    <a class="@env?.CssClass" href="javascript:void(0)" id="show-second-menu">Menu Group 2</a>
                 </li>
             </ul>
             <ul class="menu env2-toggleable-content" data-show-id="show-first-menu" data-hide-id="show-second-menu">

@@ -1,0 +1,22 @@
+﻿@{
+    var currentEnvironmentAlias = Request.Cookies[env2.Core.Environment.Marker]?.Value;// Response.Cookies already has new env alias (from _PageStart.cshtml)
+    var newEnvironmentAlias = Request.QueryString[env2.Core.Environment.Marker];// This env alias must be extracted from QueryString as environment switching is performed via GET request!!!
+
+    if (!Request.QueryString["goToUrl"].IsEmpty())
+    {
+        Response.Redirect(HttpUtility.UrlDecode(Request.QueryString["goToUrl"]));
+        return;
+    }// TODO: refactor in commands!
+
+    if (newEnvironmentAlias.IsEmpty())
+    {
+        Response.Redirect("~/"); // Default page
+        return;
+    }
+
+    if (currentEnvironmentAlias == newEnvironmentAlias)
+    {
+        Response.Redirect($"~/env/Health?env={newEnvironmentAlias}");
+        return;
+    }
+}

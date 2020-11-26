@@ -1,12 +1,16 @@
 ﻿@{
     Layout = "~/_Layout.cshtml";
-    
+
     var environmentAlias = Request.GetEnvironmentAlias();
 
     if (environmentAlias.IsNotEmpty())
     {
         Response.Cookies.Add(HttpOnlyCookie.Create(env2.Core.Environment.Marker, environmentAlias));
-        Page.Env = new env2.Core.Environment(environmentAlias);
+        
+        var modules = new List<EnvModule>();        
+        var env = new env2.Core.Environment(environmentAlias, modules);
+        env.CssClass = string.Empty;// override if needed
+        Page.Env = env;
     }
 }
 

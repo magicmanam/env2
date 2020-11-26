@@ -7,7 +7,8 @@
 <head>
     <meta charset="utf-8" />
     <title>@Page.Title - E=nv2</title>
-    
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" type="text/css" />
+
     <link href="~/Content/env2/common.css?v=1" rel="stylesheet" type="text/css" />
     <link href="~/Content/env2/navigation.css?v=2" rel="stylesheet" type="text/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -38,6 +39,11 @@
     <script src="~/Scripts/env2/common/modules/tips/_.js"></script>
     <script>
         $(function () {
+            @if (!string.IsNullOrWhiteSpace(Request.QueryString["env2-noty"]))
+            {
+                @:noty({ text: '@Request.QueryString["env2-noty"]', layout: 'topCenter', type: 'warning', timeout: 7000 });
+            }
+
             env2.alias = '@(this.GetEnvironment()?.Alias)';
         });
     </script>
