@@ -1,0 +1,39 @@
+﻿@{
+    this.SetTitle("Box Health");
+
+    var env = this.GetEnvironment();
+
+    var currentTime = DateTime.MinValue;
+
+    try
+    {
+        currentTime = env.GetCurrentTime();
+    }
+    catch { }    
+}
+
+<hgroup class="title">
+    <h1>@env.Name</h1>@*Deployed server*@
+</hgroup>
+
+<div>
+    <h2>Errors flow</h2>
+    <p>Fact => solution (just a template for future success)</p>
+</div>
+<br />
+
+@section Scripts
+{
+    <script>
+    
+    </script>
+}
+
+@section Styles
+{
+    <style>
+        
+    </style>
+}
+
+@using env2.Web.WebPages

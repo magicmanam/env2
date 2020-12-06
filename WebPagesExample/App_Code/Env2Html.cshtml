@@ -1,0 +1,28 @@
+﻿@helper EnvAliasInput()
+{
+    <input type="hidden" name="env" value="@Page.Env.Alias" />
+}
+
+@helper EnvironmentMenuItem(env2.Core.Environment environment)
+{
+    if (Page.Env?.Alias == environment.Alias)
+    {
+        <span class="active">@environment.Name</span>
+    }
+    else
+    {
+        <div class="dropdown">
+            <a href="@environment.Link("/EnvironmentSwitch", $"goToUrl={HttpUtility.UrlEncode(Request.QueryString["goToUrl"])}")" class="dropbtn @environment.CssClass">@environment.Name</a>
+            <div class="dropdown-content">
+                @*<a class="data @(Page.Module == "user" ? "active" : "")" href="@Env2.Link(envAlias, "/Env/Users", $"userName={WebConfigurationManager.AppSettings["userNamePattern"]}&isInitial=true")">Users</a>
+                    <a class="data" href="@Env2.Link(envAlias, "/Env/Attributes")">Attributes</a>
+                    <a class="data" href="@Env2.Link(envAlias, "/Env/Customers")">Customers</a>
+                    <a class="data" href="@Env2.Link(envAlias, "/Env/Ssms/History", "minutes=3")">History</a>
+                    <a class="data" href="@Env2.Link(envAlias, "/Env/RadiusFM")">Logs</a>
+                    <a class="data" href="@Env2.Link(envAlias, "/Env/WindowsEvents", "log=Application&minutes=5")" style="white-space: nowrap;">Event Viewer</a>*@
+            </div>
+        </div>
+    }
+}
+
+@using env2.Core.Web

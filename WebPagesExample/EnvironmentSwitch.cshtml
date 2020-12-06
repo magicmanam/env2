@@ -19,4 +19,12 @@
         Response.Redirect($"~/env/Health?env={newEnvironmentAlias}");
         return;
     }
+
+    var lastPage = string.Empty;
+
+    if (lastPage.IsEmpty() ||
+        $"{Request.Url.Scheme}://{Request.Url.Host}:{Request.Url.Port}/" == lastPage)// Last page is Home page
+    {
+        Response.Redirect($"~/Env/Health?env={newEnvironmentAlias}");
+    }
 }

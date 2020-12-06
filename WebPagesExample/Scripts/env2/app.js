@@ -9,7 +9,7 @@
 });
 
 window.onscroll = function scrollFunction() {
-    pro.id('2-top').style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? 'block' : 'none';
+    pro.id('top').style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? 'block' : 'none';
 };
 
 window.onbeforeunload = function (e) {

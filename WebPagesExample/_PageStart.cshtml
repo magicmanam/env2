@@ -1,16 +1,31 @@
 ﻿@{
     Layout = "~/_Layout.cshtml";
 
+    env2.Core.env2.EnvironmentGroups = new List<IEnumerable<env2.Core.Environment>>()
+    {
+        new List<env2.Core.Environment> { new env2.Core.Environment("e1", "Env 1", new List<EnvModule>() { new EnvModule() }) },
+        new List<env2.Core.Environment> { new env2.Core.Environment("e2", "Env 2", new List<EnvModule>()) }
+    };
+
     var environmentAlias = Request.GetEnvironmentAlias();
 
     if (environmentAlias.IsNotEmpty())
     {
         Response.Cookies.Add(HttpOnlyCookie.Create(env2.Core.Environment.Marker, environmentAlias));
+
+        var modules = new List<EnvModule>();
+        env2.Core.Environment environment = null;
+        foreach (var group in env2.Core.env2.EnvironmentGroups)
+        {
+            environment = group.FirstOrDefault(e => e.Alias == environmentAlias);
+            if (environment != null)
+            {
+                break;
+            }
+        }
         
-        var modules = new List<EnvModule>();        
-        var env = new env2.Core.Environment(environmentAlias, modules);
-        env.CssClass = string.Empty;// override if needed
-        Page.Env = env;
+        //environment.CssClass = string.Empty;// override if needed
+        Page.Env = environment;
     }
 }
 

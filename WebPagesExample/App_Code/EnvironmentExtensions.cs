@@ -11,4 +11,9 @@ public static class EnvironmentExtensions
     {
         return $"Group #{environment.GetMenuGroup()}";
     }
+
+    public static System.DateTime GetCurrentTime(this Environment environment)
+    {
+        return System.DateTime.Now;
+    }
 }

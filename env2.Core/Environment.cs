@@ -14,9 +14,12 @@ namespace env2.Core
         /// Initializes a new instance of the <see cref="Environment"/> class.
         /// </summary>
         /// <param name="alias">Environment's alias.</param>
-        public Environment(string alias, IEnumerable<EnvModule> modules)
+        /// <param name="name">Environment's name.</param>
+        /// <param name="modules">Available environment's modules.</param>
+        public Environment(string alias, string name, IEnumerable<EnvModule> modules)
         {
             this.Alias = alias;
+            this.Name = name;
             this.Modules = modules;       
         }
 

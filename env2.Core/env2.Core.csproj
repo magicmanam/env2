@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="env2.cs" />
     <Compile Include="Web\Env2HtmlHelper.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="EnvironmentExtensions.cs" />

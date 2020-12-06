@@ -60,10 +60,10 @@
                 </li>
             </ul>
             <ul class="menu env2-toggleable-content" data-show-id="show-first-menu" data-hide-id="show-second-menu">
-                @RenderPage("~/_FirstMenu.cshtml")
+                @RenderPage("~/_MenuGroup.cshtml", new { Environments = env2.EnvironmentGroups[0] })
             </ul>
             <ul class="menu env2-toggleable-content" data-show-id="show-second-menu" data-hide-id="show-first-menu">
-                @RenderPage("~/_SecondMenu.cshtml")
+                @RenderPage("~/_MenuGroup.cshtml", new { Environments = env2.EnvironmentGroups[1] })
             </ul>
             @if (env != null)
             {
@@ -84,3 +84,4 @@
 
 @using env2.Web.WebPages
 @using env2.Core.Web
+@using env2.Core

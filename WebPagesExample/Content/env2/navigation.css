@@ -34,11 +34,11 @@ ul.menu li a:hover {
     text-decoration: none;
 }
 
-#2-top {
+#top {
     display: none;
     position: fixed;
     bottom: 57px;
-    right: 30px;
+    left: 70px;
     z-index: 99;
     border: none;
     outline: none;
@@ -50,7 +50,7 @@ ul.menu li a:hover {
     font-size: 18px;
 }
 
-#2-top:hover {
+#top:hover {
     background-color: #555;
 }
 
